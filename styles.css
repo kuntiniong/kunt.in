@@ -1,0 +1,374 @@
+/* import google fonts */
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap");
+
+/* layout styling */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "JetBrains Mono", monospace;
+  background-color: white;
+
+  margin: 5vh 20vw;
+  max-width: 65vw;
+}
+
+section {
+  margin: 15vh 0;
+
+  scroll-margin-top: 20vh; /* creates top margin for in-page anchors */
+}
+
+html {
+  scroll-behavior: smooth; /* enables the anchors to have scrolling animation */
+}
+
+h2 {
+  /* section's title */
+  margin-bottom: 10px;
+  background: linear-gradient(to right, rgba(128, 128, 128, 0.332), white);
+}
+
+.context {
+  /* context indentation */
+  padding: 10px; 
+}
+
+/* anchor styling */
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: rgb(179, 143, 60);
+}
+
+/* highlighting */
+span {
+  color: #9d194e; /* highlighting */
+  font-weight: 1000;
+}
+
+em {
+  font-weight: 1000; /* italic */
+  color: darkblue;
+}
+
+/* navigation bar */
+.kuntiniong {
+  padding: 5px;
+
+  top: 0;
+  position: sticky;
+
+  z-index: 2; /* on top of the nav-bar */
+
+  pointer-events: none;
+}
+
+.kuntiniong > * {
+  pointer-events: auto; /* allows interaction abeilt overlapping */
+}
+
+.kuntiniong a {
+  font-family: "Cedarville Cursive", Arial;
+
+  font-size: 25px;
+  font-weight: bold;
+
+  color: black;
+  text-decoration: none;
+}
+
+.nav-bar {
+  background-color: white;
+  padding: 10px;
+
+  top: 0;
+  position: sticky; /* fixed on top */
+
+  z-index: 1;
+}
+
+.tab-list {
+  display: flex;
+  justify-content: flex-end; /* align to right */
+
+  list-style-type: none;
+}
+
+.tab {
+  padding: 10px;
+}
+
+/* home */
+.home {
+  text-align: center;
+  margin-bottom: 25vh;
+}
+
+.hero {
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 20px auto;
+
+  font-size: 32px;
+
+  color: transparent;
+  font-weight: 1000;
+  background-image: linear-gradient(to right, blue, red);
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  animation: typing 3s steps(30, end), colorTransition 2s ease infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes colorTransition {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.home img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+
+.google {
+  font-weight: 1000;
+  color: black;
+}
+
+.blue {
+  color: #4285f4;
+}
+
+.green {
+  color: #24a853;
+}
+
+.yellow {
+  color: #fbbc05;
+}
+
+.red {
+  color: #ea4335;
+}
+
+.deloitte {
+  color: #86bc25;
+}
+
+/* about */
+
+
+/* projects */
+.project-name {
+  font-weight: 1000;
+}
+
+.project-item {
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  align-items: center;
+  margin-bottom: 20px;
+
+  border-bottom: 1px solid gray;
+}
+
+.project-info {
+  grid-column: 1 / 2;
+}
+
+.project-descrip::before {
+  content: ">"; /* indenTation */
+  text-indent: 0;
+}
+
+.project-descrip {
+  margin-top: 15px;
+
+  /* indenation */
+  text-indent: -1.2em;
+  margin-left: 2em;
+}
+
+.tech {
+  font-size: 15px;
+  margin: 1em 0;
+
+}
+
+.project-image {
+  grid-column: 2 / 3;
+  width: 200px;
+  height: 150px;
+}
+
+.project-image img {
+  width: 100%; /* proportion */
+  height: 100%;
+  object-fit: cover;
+}
+
+.project span,
+.project p,
+.project em {
+  /* hover animation */
+  color: gray;
+  font-weight: normal;
+  transition: color 0.3s ease-out, font-weight 0.3s ease-out;
+}
+
+.project a:hover h3 {
+  color: black;
+  text-decoration: underline;
+}
+
+.project a:hover span {
+  color: #9d194e;
+  font-weight: 1000;
+}
+
+.project a:hover em {
+  color: darkblue;
+  font-weight: 1000;
+}
+
+.project a:hover p {
+  color: black;
+}
+
+/* courses */
+.year {
+  margin-top: 25px;
+  border-bottom: 1px solid gray;
+}
+
+.year h3 {
+  margin-bottom: 10px;
+}
+
+.course-item {
+  margin-bottom: 10px;
+}
+
+.course-list {
+  margin-left: 15px;
+  padding: 8px;
+  list-style-type: none;
+}
+
+.course-list {
+  column-count: 2;
+}
+
+/* contact */
+.contact {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.contact p {
+  display: inline;
+}
+
+/* portrait mode */
+@media screen and (max-width: 900px) {
+  /* hide the horizontal scroll bar and remove extra spaces on mobile */
+  html,
+  body {
+    overflow-x: clip; /* use clip cuz hidden will make sticky not working */
+  }
+  body {
+    position: relative;
+  }
+
+  body {
+    font-size: 15px;
+    margin: 5vh 10vw;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .kuntiniong {
+    display: flex;
+    justify-content: center;
+
+    background-color: white;
+    pointer-events: all;
+  }
+
+  .tab-list {
+    display: flex;
+    justify-content: center;
+  }
+
+  section {
+    scroll-margin-top: 15vh;
+  }
+
+  .nav-bar {
+    top: 6vh;
+    position: sticky;
+  }
+
+  .course-list {
+    column-count: 1;
+  }
+
+  /* disable the images */
+  .project-item {
+    display: grid;
+    grid-template-columns: 1fr 0;
+  }
+
+  .project-image img {
+    display: none;
+  }
+}
+
+/* mobile devices */
+@media (hover: none) {
+  .project h3 {
+    color: black;
+    text-decoration: underline;
+  }
+
+  .project p {
+    color: black;
+  }
+
+  .project span {
+    color: #9d194e;
+    font-weight: 1000;
+  }
+
+  .project em {
+    color: darkblue;
+    font-weight: 1000;
+  }
+}
