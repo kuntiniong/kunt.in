@@ -28,12 +28,18 @@ html {
 h2 {
   /* section's title */
   margin-bottom: 10px;
+  padding-left: 3px;
   background: linear-gradient(to right, rgba(128, 128, 128, 0.332), white);
 }
 
 .context {
   /* context indentation */
   padding: 10px;
+}
+
+/* line spacing except for home */
+p:not(.home > p) {
+  line-height: 1.8em;
 }
 
 /* anchor styling */
@@ -305,7 +311,7 @@ em {
 
   body {
     font-size: 15px;
-    margin: 2vh 10vw;
+    margin: 1vh 10vw;
     max-width: 100%;
     box-sizing: border-box;
   }
