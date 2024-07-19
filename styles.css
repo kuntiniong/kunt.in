@@ -33,7 +33,7 @@ h2 {
 
 .context {
   /* context indentation */
-  padding: 10px; 
+  padding: 10px;
 }
 
 /* anchor styling */
@@ -155,7 +155,6 @@ em {
   margin-bottom: 20px;
 }
 
-
 .google {
   font-weight: 1000;
   color: black;
@@ -182,7 +181,6 @@ em {
 }
 
 /* about */
-
 
 /* projects */
 .project-name {
@@ -218,7 +216,6 @@ em {
 .tech {
   font-size: 15px;
   margin: 1em 0;
-
 }
 
 .project-image {
@@ -331,11 +328,11 @@ em {
   }
 
   #home {
-    margin: 5vh 0; /* relocate home to center of the phone */  
+    margin: 5vh 0; /* relocate home to center of the phone */
   }
 
   .nav-bar {
-    top: 6vh;
+    top: 50px;
     position: sticky;
   }
 
