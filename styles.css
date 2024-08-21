@@ -10,9 +10,10 @@
 
 body {
   font-family: "JetBrains Mono", monospace;
+  color:#313638;
   background-color: white;
 
-  margin: 5vh 20vw;
+  margin: 2vh 20vw;
   max-width: 65vw;
 }
 
@@ -45,7 +46,7 @@ p:not(.home > p) {
 /* anchor styling */
 a {
   text-decoration: none;
-  color: black;
+  color: #313638;
 }
 
 a:hover {
@@ -85,7 +86,7 @@ em {
   font-size: 25px;
   font-weight: 1000;
 
-  color: black;
+  color: #313638;
   text-decoration: none;
 }
 
@@ -163,7 +164,7 @@ em {
 
 .google {
   font-weight: 1000;
-  color: black;
+  color: #313638;
 }
 
 .blue {
@@ -246,7 +247,7 @@ em {
 }
 
 .project a:hover h3 {
-  color: black;
+  color: #313638;
   text-decoration: underline;
 }
 
@@ -261,7 +262,7 @@ em {
 }
 
 .project a:hover p {
-  color: black;
+  color: #313638;
 }
 
 /* courses */
@@ -275,7 +276,7 @@ em {
 }
 
 .course-item {
-  margin-bottom: 10px;
+  margin-bottom: 1.5rem;
 }
 
 .course-list {
@@ -286,6 +287,28 @@ em {
 
 .course-list {
   column-count: 2;
+}
+
+/* highlight */
+.course-list span {
+  font-size: 16px; /* fixed font size */
+}
+
+.math {
+  color: #9d194e;
+}
+
+.business {
+  color: #536493;
+}
+
+.tech {
+  color: #4d3c77;
+}
+
+.lang {
+  color: #313638;
+  font-weight: 500;
 }
 
 /* contact */
@@ -311,7 +334,7 @@ em {
 
   body {
     font-size: 15px;
-    margin: 1vh 10vw;
+    margin: 1vh 8vw;
     max-width: 100%;
     box-sizing: border-box;
   }
@@ -364,12 +387,12 @@ em {
   }
 
   .project h3 {
-    color: black;
+    color: #313638;
     text-decoration: underline;
   }
 
   .project p {
-    color: black;
+    color: #313638;
   }
 
   .project span {
@@ -380,5 +403,13 @@ em {
   .project em {
     color: darkblue;
     font-weight: 1000;
+  }
+
+  .course-list span {
+    font-size: 14px;
+  }
+
+  .course-item {
+    margin-bottom: 1rem;
   }
 }
