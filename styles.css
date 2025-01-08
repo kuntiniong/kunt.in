@@ -10,7 +10,7 @@
 
 body {
   font-family: "JetBrains Mono", monospace;
-  color:#313638;
+  color: #313638;
   background-color: white;
 
   margin: 2vh 20vw;
@@ -18,8 +18,12 @@ body {
 }
 
 section {
-  margin: 15vh 0;
-  scroll-margin-top: 20vh; /* creates top margin for in-page anchors */
+  margin: 5vh 0;
+  scroll-margin-top: 15vh; /* creates top margin for in-page anchors */
+}
+
+#home {
+  margin: 20vh 0;
 }
 
 html {
@@ -275,25 +279,21 @@ em {
   margin-bottom: 10px;
 }
 
+.course-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* two equal-width columns */
+  list-style-type: none;
+  padding: 1.5em;
+}
+
 .course-item {
+  font-size: 16px; /* fixed font size */
+
+  font-weight: 1000;
   margin-bottom: 1.5rem;
 }
 
-.course-list {
-  margin-left: 15px;
-  padding: 8px;
-  list-style-type: none;
-}
-
-.course-list {
-  column-count: 2;
-}
-
 /* highlight */
-.course-list span {
-  font-size: 16px; /* fixed font size */
-}
-
 .math {
   color: #9d194e;
 }
@@ -308,7 +308,7 @@ em {
 
 .lang {
   color: #313638;
-  font-weight: 500;
+  font-weight: 500 !important;
 }
 
 /* contact */
@@ -366,7 +366,7 @@ em {
   }
 
   .course-list {
-    column-count: 1;
+    grid-template-columns: 1fr; /* one column */
   }
 
   /* disable the images */
