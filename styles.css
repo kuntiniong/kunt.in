@@ -312,9 +312,16 @@ em {
 }
 
 /* contact */
+.contact-descrip {
+  padding: 1.5em;
+  border-bottom: 1px solid gray;
+}
+
+
 .contact {
   display: flex;
   justify-content: space-evenly;
+  margin-top: 1em;
 }
 
 .contact p {
