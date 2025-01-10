@@ -1,17 +1,46 @@
-/* import google fonts */
+/* fonts */
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap");
 
+/* color palette */
+:root {
+  --primary-color: #00008b;
+  --secondary-color: #9d194e;
+  --tertiary-color: #4d3c77;
+  --accent-color: #b38f3c; /* after-hover */
+
+  --background-color: #ffffff;
+  --text-color: #313638; /* main context */
+  --muted-color: #808080; /* before-hover & borders */
+}
+
+.dark-mode {
+  --primary-color: #e3bb08;
+  --secondary-color: #d03365;
+  --tertiary-color: #6c63a8;
+  --accent-color: #d1b47f;
+
+  --background-color: #1f1f1f;
+  --text-color: #f2f0ef;
+  --muted-color: #5a5a5a;
+}
+
 /* layout styling */
 * {
+  /* remove all the default margin and padding */
   margin: 0;
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth; /* enables the anchors to have scrolling animation */
+}
+
 body {
   font-family: "JetBrains Mono", monospace;
-  color: #313638;
-  background-color: white;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  font-weight: 500;
 
   margin: 2vh 20vw;
   max-width: 65vw;
@@ -22,19 +51,15 @@ section {
   scroll-margin-top: 15vh; /* creates top margin for in-page anchors */
 }
 
-#home {
-  margin: 20vh 0;
-}
-
-html {
-  scroll-behavior: smooth; /* enables the anchors to have scrolling animation */
-}
-
 h2 {
   /* section's title */
   margin-bottom: 10px;
   padding-left: 3px;
-  background: linear-gradient(to right, rgba(128, 128, 128, 0.332), white);
+  background: linear-gradient(
+    to right,
+    rgba(128, 128, 128, 0.332),
+    var(--background-color)
+  );
 }
 
 .context {
@@ -50,22 +75,22 @@ p:not(.home > p) {
 /* anchor styling */
 a {
   text-decoration: none;
-  color: #313638;
+  color: var(--text-color);
 }
 
 a:hover {
-  color: rgb(179, 143, 60);
+  color: var(--accent-color);
 }
 
 /* highlighting */
 span {
-  color: #9d194e; /* highlighting */
+  color: var(--secondary-color); /* highlighting */
   font-weight: 1000;
 }
 
 em {
   font-weight: 1000; /* italic */
-  color: darkblue;
+  color: var(--primary-color);
 }
 
 /* navigation bar */
@@ -90,12 +115,12 @@ em {
   font-size: 25px;
   font-weight: 1000;
 
-  color: #313638;
+  color: var(--text-color);
   text-decoration: none;
 }
 
 .nav-bar {
-  background-color: white;
+  background-color: var(--background-color);
   padding: 10px;
 
   top: 0;
@@ -116,9 +141,11 @@ em {
 }
 
 /* home */
+#home {
+  margin: 10vh 0;
+}
 .home {
   text-align: center;
-  margin-bottom: 25vh;
 }
 
 .hero {
@@ -130,7 +157,7 @@ em {
 
   color: transparent;
   font-weight: 1000;
-  background-image: linear-gradient(to right, blue, red);
+  background-image: linear-gradient(to right, var(--primary-color), red);
   background-size: 200% 200%;
   background-clip: text;
   -webkit-background-clip: text;
@@ -168,7 +195,7 @@ em {
 
 .google {
   font-weight: 1000;
-  color: #313638;
+  color: var(--text-color);
 }
 
 .blue {
@@ -204,7 +231,7 @@ em {
   align-items: center;
   margin-bottom: 20px;
 
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid var(--muted-color);
 }
 
 .project-info {
@@ -245,34 +272,34 @@ em {
 .project p,
 .project em {
   /* hover animation */
-  color: gray;
+  color: var(--muted-color);
   font-weight: normal;
   transition: color 0.3s ease-out, font-weight 0.3s ease-out;
 }
 
 .project a:hover h3 {
-  color: #313638;
+  color: var(--text-color);
   text-decoration: underline;
 }
 
 .project a:hover span {
-  color: #9d194e;
+  color: var(--secondary-color);
   font-weight: 1000;
 }
 
 .project a:hover em {
-  color: darkblue;
+  color: var(--primary-color);
   font-weight: 1000;
 }
 
 .project a:hover p {
-  color: #313638;
+  color: var(--text-color);
 }
 
 /* courses */
 .year {
   margin-top: 25px;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid var(--muted-color);
 }
 
 .year h3 {
@@ -295,28 +322,27 @@ em {
 
 /* highlight */
 .math {
-  color: #9d194e;
+  color: var(--secondary-color);
 }
 
 .business {
-  color: #536493;
+  color: var(--tertiary-color);
 }
 
 .tech {
-  color: #4d3c77;
+  color: var(--primary-color);
 }
 
 .lang {
-  color: #313638;
+  color: var(--text-color);
   font-weight: 500 !important;
 }
 
 /* contact */
 .contact-descrip {
   padding: 1.5em;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid var(--muted-color);
 }
-
 
 .contact {
   display: flex;
@@ -326,6 +352,18 @@ em {
 
 .contact p {
   display: inline;
+}
+
+/* dark mode */
+.dark-mode-button {
+  background: none; /* remove default background & border */
+  border: none;
+
+  font-family: inherit; /* same font as the rest of the page */
+  font-size: 16px;
+  color: #0078ff;
+
+  cursor: pointer; /* add pointer cursor on hover */
 }
 
 /* portrait mode */
@@ -350,7 +388,7 @@ em {
     display: flex;
     justify-content: center;
 
-    background-color: white;
+    background-color: var(--background-color);
     pointer-events: all;
   }
 
@@ -389,26 +427,26 @@ em {
 
 /* mobile devices */
 @media (hover: none) {
-  .kuntiniong a {
+  /* .kuntiniong a {
     font-weight: 100;
-  }
+  } */
 
   .project h3 {
-    color: #313638;
+    color: var(--text-color);
     text-decoration: underline;
   }
 
   .project p {
-    color: #313638;
+    color: var(--text-color);
   }
 
   .project span {
-    color: #9d194e;
+    color: var(--secondary-color);
     font-weight: 1000;
   }
 
   .project em {
-    color: darkblue;
+    color: var(--primary-color);
     font-weight: 1000;
   }
 
