@@ -140,6 +140,24 @@ em {
   padding: 10px;
 }
 
+/* dark mode toggle */
+.dark-mode-button {
+  background: none; /* remove default background & border */
+  border: none;
+
+  margin-left: 1.5em;
+  cursor: pointer; /* add pointer cursor on hover */
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 300,
+  'GRAD' 0,
+  'opsz' 24;
+  color: var(--primary-color);
+}
+
 /* home */
 #home {
   margin: 10vh 0;
@@ -354,18 +372,6 @@ em {
   display: inline;
 }
 
-/* dark mode */
-.dark-mode-button {
-  background: none; /* remove default background & border */
-  border: none;
-
-  font-family: inherit; /* same font as the rest of the page */
-  font-size: 16px;
-  color: #0078ff;
-
-  cursor: pointer; /* add pointer cursor on hover */
-}
-
 /* portrait mode */
 @media screen and (max-width: 900px) {
   /* hide the horizontal scroll bar and remove extra spaces on mobile */
@@ -427,9 +433,9 @@ em {
 
 /* mobile devices */
 @media (hover: none) {
-  /* .kuntiniong a {
+  .kuntiniong a {
     font-weight: 100;
-  } */
+  }
 
   .project h3 {
     color: var(--text-color);

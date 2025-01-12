@@ -1,29 +1,25 @@
 const body = document.body;
 const button = document.getElementById("darkModeToggle");
+const icon = button.querySelector(".material-symbols-outlined");
 
-// initialization
+// Initialization
 if (localStorage.getItem("theme") === "dark") {
-  // enable dark mode if the local storage stores dark mode as preference
-  body.classList.add("dark-mode");
-
-  button.textContent = "Light Mode";
+  // enable dark mode if saved in localStorage
+  body.classList.add("dark-mode"); // change theme
+  icon.textContent = "light_mode"; // change icon
 } else {
-  button.textContent = "Dark Mode";
+  icon.textContent = "dark_mode";
 }
 
-// interaction
+// Interaction
 button.addEventListener("click", () => {
-  // enable darkmode
+  // toggle dark mode
   body.classList.toggle("dark-mode");
 
   // save preference
-  localStorage.setItem(
-    "theme",
-    body.classList.contains("dark-mode") ? "dark" : "light"
-  );
+  const isDarkMode = body.classList.contains("dark-mode");
+  localStorage.setItem("theme", isDarkMode ? "dark" : "light");
 
-  // change button text
-  button.textContent = body.classList.contains("dark-mode")
-    ? "Light Mode"
-    : "Dark Mode";
+  // update button icon
+  icon.textContent = isDarkMode ? "light_mode" : "dark_mode";
 });
