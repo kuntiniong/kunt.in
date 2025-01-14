@@ -47,7 +47,7 @@ body {
 }
 
 section {
-  margin: 5vh 0;
+  margin-top: 5vh;
   scroll-margin-top: 15vh; /* creates top margin for in-page anchors */
 }
 
@@ -232,10 +232,6 @@ em {
   color: #ea4335;
 }
 
-.deloitte {
-  color: #86bc25;
-}
-
 /* about */
 
 /* projects */
@@ -343,18 +339,46 @@ em {
   color: var(--secondary-color);
 }
 
-.business {
-  color: var(--tertiary-color);
-}
-
 .tech {
   color: var(--primary-color);
+}
+
+.business {
+  color: var(--tertiary-color);
 }
 
 .lang {
   color: var(--text-color);
   font-weight: 500 !important;
 }
+
+/* legend */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+
+  gap: 15px;
+  margin-right: 10px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+}
+
+.legend-color {
+  width: 15px;
+  height: 15px;
+  border-radius: 3px;
+}
+
+.math-color { background-color: var(--secondary-color); }
+.tech-color { background-color: var(--primary-color); }
+.business-color { background-color: var(--tertiary-color); }
+.lang-color { background-color: var(--text-color); }
 
 /* contact */
 .contact-descrip {
