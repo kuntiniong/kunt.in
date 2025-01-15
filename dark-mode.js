@@ -3,14 +3,16 @@ const button = document.getElementById("darkModeToggle");
 const icon = button.querySelector(".material-symbols-outlined");
 const image = document.getElementById("portrait");
 
-const urlArr = ["images/kun.png", "images/kun_darkmode.png"]
+const urlArr = ["images/kun.png", "images/kun_darkmode.png"];
 
 // Initialization
 if (localStorage.getItem("theme") === "dark") {
   // enable dark mode if saved in localStorage
   body.classList.add("dark-mode"); // change theme
   icon.textContent = "light_mode"; // change icon
-  image.src = urlArr[1]
+  if (image) {
+    image.src = urlArr[1];
+  }
 } else {
   icon.textContent = "dark_mode";
 }
@@ -28,6 +30,7 @@ button.addEventListener("click", () => {
   icon.textContent = isDarkMode ? "light_mode" : "dark_mode";
 
   // update portrait
-  image.src = urlArr[Number(isDarkMode)]
+  if (image) {
+    image.src = urlArr[Number(isDarkMode)];
+  }
 });
-
