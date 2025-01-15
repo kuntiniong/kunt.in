@@ -11,13 +11,7 @@ kuntiniong.github.io/
 ├── courses/
 │   └── index.html
 ├── images/
-│   ├── eslite_logo.png
-│   ├── favicon.png
-│   ├── ig_logo.png
-│   ├── ml.png
-│   ├── portrait.jpg
-│   ├── thumbnail.png
-│   └── web.png
+│   └── // store all my images
 ├── projects/
 │   └── index.html
 ├── _config.yml    // jekyll config
@@ -27,3 +21,8 @@ kuntiniong.github.io/
 ├── README.md
 └── styles.css
 ```
+
+---
+Useful websites:
+- https://css.glass/ (for glassmorphism)
+- https://csshero.org/mesher/ (for mesh gradient)
