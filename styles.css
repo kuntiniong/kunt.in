@@ -29,7 +29,7 @@
   --primary-color: #e3bb08;
   --secondary-color: #d03365;
   --tertiary-color: #6c63a8;
-  --accent-color: #d1b47f;
+  --accent-color: #1bcdd0;
 
   --background-color: #1f1f1f;
   --text-color: #f2f0ef;
@@ -159,6 +159,8 @@ em {
 }
 
 .nav-bar {
+  font-size: clamp(14px, 3.2vw, 16px);
+
   background: var(--glass);
   border-radius: 16px;
   backdrop-filter: blur(6.5px);
@@ -271,6 +273,16 @@ em {
   color: #ea4335;
 }
 
+/* home contact */
+.contact-home {
+  border-top: 1px solid var(--muted-color);
+  padding-top: 2em; 
+  display: flex;
+  justify-content: center;
+  margin-top: 5vh;
+  gap: 3vw;
+}
+
 /* about */
 
 /* projects */
@@ -367,7 +379,7 @@ em {
 }
 
 .course-item {
-  font-size: 16px; /* fixed font size */
+  font-size: clamp(10px, 3.2vw, 16px);
 
   font-weight: 1000;
   margin-bottom: 1.5rem;
@@ -397,7 +409,9 @@ em {
   flex-wrap: wrap;
   justify-content: flex-end;
 
-  gap: 15px;
+  font-size: clamp(14px, 3.2vw, 16px);
+
+  gap: 1em;
   margin-right: 10px;
 }
 
@@ -508,6 +522,11 @@ em {
 
   .project-image img {
     display: none;
+  }
+  
+  .legend {
+    font-size: 2.5vw;
+    justify-content: flex-start;
   }
 }
 
