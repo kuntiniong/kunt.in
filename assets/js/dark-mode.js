@@ -4,7 +4,7 @@ const icon = button.querySelector(".material-symbols-outlined");
 const portrait = document.getElementById("portrait");
 const projectImg = document.querySelectorAll('.project-image img');
 
-const urlArr = ["images/kun.png", "images/kun_darkmode.png"];
+const urlArr = ["assets/images/kun.png", "assets/images/kun_darkmode.png"];
 const filterArr = ["none", "invert(88%)"]
 
 // Initialization

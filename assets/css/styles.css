@@ -110,6 +110,7 @@ em {
   z-index: 2; /* on top of the nav-bar */
 
   pointer-events: none;
+  transition: background-color 0.5s ease, transform 0.5s ease;
 }
 
 .kuntiniong > * {
