@@ -1,4 +1,4 @@
-My personal website built with native html, css and javascript.
+My personal website built with html, css and javascript.
 
 ---
 File structure:
@@ -11,13 +11,7 @@ kuntiniong.github.io/
 ├── courses/
 │   └── index.html
 ├── images/
-│   ├── eslite_logo.png
-│   ├── favicon.png
-│   ├── ig_logo.png
-│   ├── ml.png
-│   ├── portrait.jpg
-│   ├── thumbnail.png
-│   └── web.png
+│   └── // store all my images
 ├── projects/
 │   └── index.html
 ├── _config.yml    // jekyll config
