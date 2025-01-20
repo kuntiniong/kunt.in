@@ -247,6 +247,7 @@ em {
 
 /* projects */
 .project-name {
+  font-size: 21px;
   font-weight: 1000;
 }
 
@@ -254,9 +255,12 @@ em {
   display: grid;
   grid-template-columns: 1fr 200px;
   align-items: center;
-  margin-bottom: 20px;
-
+  margin: 2rem 0;
   border-bottom: 1px solid var(--muted-color);
+}
+
+.project-border{
+  margin-top: 1.5rem;
 }
 
 .project-info {
@@ -264,7 +268,7 @@ em {
 }
 
 .project-descrip::before {
-  content: ">"; /* indenTation */
+  content: ">"; /* indentation */
   text-indent: 0;
 }
 
