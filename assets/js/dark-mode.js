@@ -1,17 +1,24 @@
 const body = document.body;
 const button = document.getElementById("darkModeToggle");
 const icon = button.querySelector(".material-symbols-outlined");
-const image = document.getElementById("portrait");
+const portrait = document.getElementById("portrait");
+const projectImg = document.querySelectorAll('.project-image img');
 
-const urlArr = ["images/kun.png", "images/kun_darkmode.png"];
+const urlArr = ["assets/images/kun.png", "assets/images/kun_darkmode.png"];
+const filterArr = ["none", "invert(88%)"]
 
 // Initialization
 if (localStorage.getItem("theme") === "dark") {
   // enable dark mode if saved in localStorage
   body.classList.add("dark-mode"); // change theme
   icon.textContent = "light_mode"; // change icon
-  if (image) {
-    image.src = urlArr[1];
+  if (portrait) {
+    portrait.src = urlArr[1];
+  }
+  if (projectImg) {
+    projectImg.forEach(img => {
+      img.style.filter = filterArr[1]; // invert
+    });
   }
 } else {
   icon.textContent = "dark_mode";
@@ -30,7 +37,12 @@ button.addEventListener("click", () => {
   icon.textContent = isDarkMode ? "light_mode" : "dark_mode";
 
   // update portrait
-  if (image) {
-    image.src = urlArr[Number(isDarkMode)];
+  if (portrait) {
+    portrait.src = urlArr[Number(isDarkMode)];
+  }
+  if (projectImg) {
+    projectImg.forEach(img => {
+      img.style.filter = filterArr[Number(isDarkMode)]; // invert
+    });
   }
 });

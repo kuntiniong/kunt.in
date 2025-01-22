@@ -17,8 +17,10 @@
     <meta property="og:description" content="Personal Website" />
     <meta property="og:type" content="website" />
 
-    <link rel="stylesheet" type="text/css" href="../styles.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/styles.css" />
 
+    <!-- gsap library and google svg icons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=dark_mode,light_mode"
@@ -50,25 +52,26 @@
     <!-- contact -->
     <section id="contact">
       <h2>Contact</h2>
-      <p class="contact-descrip">
-        I'm always open for collaborations in potential
-        <em>hackathons</em>, <em>academic research projects</em> and
-        <em>open-source projects</em>.
-        <br />
-        <br />
-        Feel free to reach out to me via my socials.
-      </p>
-      <div class="contact">
-        <a href="https://x.com/kuntiniong">X</a>
-        <p>·</p>
-        <a href="https://github.com/kuntiniong">GitHub</a>
-        <p>·</p>
-        <a href="mailto:dev@kunt.in">dev@kunt.in</a>
+      <div class="context">
+        <p class="contact-descrip">
+          I'm always open for collaborations in potential
+          <em>hackathons</em>, <em>academic research projects</em> and
+          <em>open-source projects</em>.
+          <br />
+          <br />
+          Feel free to reach out to me via my socials.
+        </p>
+        <div class="contact">
+          <a href="https://x.com/kuntiniong">X</a>
+          <p>·</p>
+          <a href="https://github.com/kuntiniong">GitHub</a>
+          <p>·</p>
+          <a href="mailto:dev@kunt.in">dev@kunt.in</a>
+        </div>
       </div>
     </section>
 
-    <!-- dark mode -->
-    <button class="dark-mode-button" id="darkModeToggle"></button>
-    <script src="../dark-mode.js"></script>
+    <script src="../assets/js/dark-mode.js"></script>
+    <script src="../assets/js/animation.js"></script>
   </body>
 </html>

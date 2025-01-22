@@ -73,6 +73,11 @@ html {
   scroll-behavior: smooth; /* enables the anchors to have scrolling animation */
 }
 
+/* Hide the scrollbar */
+body::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Edge */
+}
+
 body {
   font-family: "JetBrains Mono", monospace;
   color: var(--text-color);
@@ -81,6 +86,7 @@ body {
 
   margin: 2vh 20vw;
   max-width: 65vw;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 section {
@@ -102,6 +108,7 @@ h2 {
 .context {
   /* context indentation */
   padding: 10px;
+  opacity: 0; /* hide the context before the gsap animations */
 }
 
 /* line spacing except for home */
@@ -142,6 +149,7 @@ em {
   z-index: 2; /* on top of the nav-bar */
 
   pointer-events: none;
+  transition: background-color 0.5s ease, transform 0.5s ease;
 }
 
 .kuntiniong > * {
@@ -172,6 +180,7 @@ em {
   position: sticky; /* fixed on top */
 
   z-index: 1;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .tab-list {
@@ -287,6 +296,7 @@ em {
 
 /* projects */
 .project-name {
+  font-size: 21px;
   font-weight: 1000;
 }
 
@@ -294,9 +304,12 @@ em {
   display: grid;
   grid-template-columns: 1fr 200px;
   align-items: center;
-  margin-bottom: 20px;
-
+  margin: 2rem 0;
   border-bottom: 1px solid var(--muted-color);
+}
+
+.project-border{
+  margin-top: 1.5rem;
 }
 
 .project-info {
@@ -331,6 +344,7 @@ em {
   width: 100%; /* proportion */
   height: 100%;
   object-fit: cover;
+  transition: filter 0.5s ease, transform 0.5s ease;
 }
 
 .project span,
