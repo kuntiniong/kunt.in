@@ -12,6 +12,7 @@
   --background-color: #ffffff;
   --text-color: #313638; /* main context */
   --muted-color: #808080; /* before-hover & borders */
+  --svg-background: #D9D9D9;
 }
 
 .dark-mode {
@@ -23,6 +24,7 @@
   --background-color: #1f1f1f;
   --text-color: #f2f0ef;
   --muted-color: #5a5a5a;
+  --svg-background: #091833;
 }
 
 /* layout styling */
@@ -170,16 +172,25 @@ em {
 
 /* home */
 #home {
-  margin: 10vh 0;
+  margin: 3.5vh 0 !important;
 }
 .home {
   text-align: center;
 }
 
+.kun-svg {
+  height: 200px;
+  width: 220px;
+  padding: 30px 30px;
+  margin: 25px 0;
+
+  background-color: var(--svg-background);
+  border-radius: 13px;
+}
+
 .hero {
   overflow: hidden;
   white-space: nowrap;
-  margin: 20px auto;
 
   font-size: 32px;
 
@@ -190,7 +201,8 @@ em {
   background-clip: text;
   -webkit-background-clip: text;
 
-  animation: typing 3s steps(30, end), colorTransition 2s ease infinite;
+  /* animation: typing 4s steps(30, end); */
+  animation: colorTransition 2s ease infinite;
 }
 
 @keyframes typing {
@@ -212,13 +224,6 @@ em {
   100% {
     background-position: 0% 50%;
   }
-}
-
-.home img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  margin-bottom: 20px;
 }
 
 .google {
@@ -491,6 +496,16 @@ em {
 @media (hover: none) {
   .kuntiniong a {
     font-weight: 100;
+  }
+
+  .kun-svg {
+    height: 130px;
+    width: 150px;
+    padding: 30px 30px;
+    margin: 25px 0;
+  
+    background-color: var(--svg-background);
+    border-radius: 13px;
   }
 
   .project h3 {

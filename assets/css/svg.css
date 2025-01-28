@@ -1,0 +1,72 @@
+/* Keyframes for line drawing */
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Keyframes for fill fade-in */
+@keyframes fill {
+  to {
+    fill-opacity: 1;
+  }
+}
+
+/* Keyframes for rectangle fade-in from left to right */
+@keyframes fadeInRect {
+  from {
+    width: 0; /* Start with no width */
+  }
+  to {
+    width: 100%; /* Full width of the rectangle */
+  }
+}
+
+/* General styles for SVG paths and the rectangle */
+.kun-svg path {
+  stroke-width: 8px; /* Outline thickness */
+  stroke-dasharray: var(--path-length); /* Total path length */
+  stroke-dashoffset: var(
+    --path-length
+  ); /* Start with dash offset at full length */
+  animation: draw 2s ease-out forwards,
+    /* Draw the outline */ fill 0.5s 2s forwards; /* Reveal the fill */
+  fill-opacity: 0; /* Initially hide the fill */
+}
+
+/* Preserve original colors explicitly */
+.kun-svg path:nth-child(1) {
+  stroke: #475360; /* Dark gray outline */
+  fill: #475360; /* Dark gray fill */
+}
+
+.kun-svg path:nth-child(2) {
+  stroke: url(#paint0_linear_0_1); /* Gradient outline */
+  fill: url(#paint0_linear_0_1); /* Gradient fill */
+}
+
+.kun-svg path:nth-child(3) {
+  stroke: #ffffff; /* White outline */
+  fill: #ffffff; /* White fill */
+}
+
+.kun-svg rect:nth-child(4) {
+  stroke: #17c5ab; /* Teal outline */
+  fill: #17c5ab; /* Teal fill */
+}
+
+.kun-svg path:nth-child(5) {
+  stroke: #b0b5bb; /* Light gray triangle outline */
+  fill: #b0b5bb; /* Light gray triangle fill */
+  fill-opacity: 0; /* Initially hidden */
+  animation: draw 2s ease-out forwards,
+    /* Outline animation */ fill 0.5s 2s forwards; /* Fill animation starts at 2 seconds */
+}
+
+/* Rectangle fade-in animation with 2s delay */
+.kun-svg rect {
+  stroke: #17c5ab; /* Teal outline */
+  fill: #17c5ab; /* Teal fill */
+  width: 0; /* Start with no width */
+  animation: fadeInRect 0.7s ease 1.9s forwards; /* Fade in with 2s delay */
+}
