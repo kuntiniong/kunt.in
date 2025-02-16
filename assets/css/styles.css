@@ -170,92 +170,7 @@ em {
   color: var(--primary-color);
 }
 
-/* home */
-#home {
-  margin: 3.5vh 0 !important;
-}
-.home {
-  text-align: center;
-}
-
-.kun-svg {
-  height: 200px;
-  width: 220px;
-  padding: 30px 30px;
-  margin: 25px 0;
-
-  background-color: var(--svg-background);
-  border-radius: 13px;
-}
-
-.hero {
-  overflow: hidden;
-  white-space: nowrap;
-
-  font-size: 32px;
-
-  color: transparent;
-  font-weight: 1000;
-  background-image: linear-gradient(to right, var(--primary-color), red);
-  background-size: 200% 200%;
-  background-clip: text;
-  -webkit-background-clip: text;
-
-  /* animation: typing 4s steps(30, end); */
-  animation: colorTransition 2s ease infinite;
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes colorTransition {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.google {
-  font-weight: 1000;
-  color: var(--text-color);
-}
-
-.blue {
-  color: #4285f4;
-}
-
-.green {
-  color: #24a853;
-}
-
-.yellow {
-  color: #fbbc05;
-}
-
-.red {
-  color: #ea4335;
-}
-
-/* home contact */
-.contact-home {
-  border-top: 1px solid var(--muted-color);
-  padding-top: 2em; 
-  display: flex;
-  justify-content: center;
-  margin-top: 5vh;
-  gap: 3vw;
-}
+/* home -> in home.js */
 
 /* about */
 
@@ -498,14 +413,19 @@ em {
     font-weight: 100;
   }
 
+  /* overriding the injected css from home.js */
+  .descrip {
+    line-height: 1.4 !important;
+  }
+
   .kun-svg {
-    height: 130px;
-    width: 150px;
-    padding: 30px 30px;
-    margin: 25px 0;
+    height: 130px !important;
+    width: 150px !important;
+    padding: 30px 30px !important;
+    margin: 25px 0 !important;
   
     background-color: var(--svg-background);
-    border-radius: 13px;
+    border-radius: 13px !important;
   }
 
   .project h3 {
