@@ -211,13 +211,10 @@ function handleMediaQueryChange(e) {
               .grid-container {
                 display: grid;
                 grid-template-columns: 1fr 1.9fr;
-                gap: 3em;
+                align-items: center;
+                gap: 1.5rem;
 
                 margin-top: 10%;
-              }
-
-              .right-container {
-                margin-top: 2.5em;
               }
 
               .descrip {
@@ -226,9 +223,9 @@ function handleMediaQueryChange(e) {
               }
 
               .kun-svg {
-                height: 200px;
-                width: 220px;
-                padding: 30px 30px;
+                height: 13rem; /* aspect ratio -> 1:1.1 */
+                width: 14.3rem;
+                padding: 1.6rem 1.6rem;
                 margin: 25px 0;
 
                 background-color: var(--svg-background);
@@ -240,15 +237,16 @@ function handleMediaQueryChange(e) {
                 padding-top: 0.5em; 
                 display: flex;
                 justify-content: left;
-                margin-top: 5vh;
+                margin-top: 1.5rem;
                 gap: 3vw;
               }
 
+              /* hero */
               .hero {
                 overflow: hidden;
                 white-space: nowrap;
 
-                font-size: 32px;
+                font-size: 2.2rem;
 
                 color: transparent;
                 font-weight: 1000;

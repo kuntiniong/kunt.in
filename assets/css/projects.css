@@ -1,0 +1,197 @@
+.project-name {
+  font-size: 1.5rem;
+  font-weight: 1000;
+}
+
+.project-item {
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  align-items: center;
+  margin: 2rem 0;
+  border-bottom: 1px solid var(--muted-color);
+}
+
+.project-border{
+  margin-top: 1.5rem;
+}
+
+.project-info {
+  grid-column: 1 / 2;
+}
+
+.project-descrip::before {
+  content: ">"; /* indentation */
+  text-indent: 0;
+}
+
+.project-descrip {
+  margin-top: 15px;
+
+  /* indenation */
+  text-indent: -1.2em;
+  margin-left: 2em;
+}
+
+.tech {
+  font-size: 0.95rem;
+  margin: 1em 0;
+}
+
+.project-image {
+  grid-column: 2 / 3;
+  width: 200px;
+  height: 150px;
+}
+
+.project-image img {
+  width: 100%; /* proportion */
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.5s ease, transform 0.5s ease;
+}
+
+.project span,
+.project p,
+.project em {
+  /* hover animation */
+  color: var(--muted-color);
+  font-weight: normal;
+  transition: color 0.3s ease-out, font-weight 0.3s ease-out;
+}
+
+.project a:hover h3 {
+  color: var(--text-color);
+  text-decoration: underline;
+}
+
+.project a:hover span {
+  color: var(--secondary-color);
+  font-weight: 1000;
+}
+
+.project a:hover em {
+  color: var(--primary-color);
+  font-weight: 1000;
+}
+
+.project a:hover p {
+  color: var(--text-color);
+}
+
+
+
+
+
+
+/* portrait mode */
+@media screen and (max-width: 900px) {
+  /* hide the horizontal scroll bar and remove extra spaces on mobile */
+  html,
+  body {
+    overflow-x: clip; /* use clip cuz hidden will make sticky not working */
+  }
+  body {
+    position: relative;
+  }
+
+  body {
+    font-size: 15px;
+    margin: 1vh 8vw;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .kuntiniong {
+    display: flex;
+    justify-content: center;
+
+    background-color: var(--background-color);
+    pointer-events: all;
+  }
+
+  .tab-list {
+    display: flex;
+    justify-content: center;
+  }
+
+  section {
+    scroll-margin-top: 15vh;
+  }
+
+  #home {
+    margin: 5vh 0; /* relocate home to center of the phone */
+  }
+
+  .nav-bar {
+    top: 50px;
+    position: sticky;
+  }
+
+  .course-list {
+    grid-template-columns: 1fr; /* one column */
+  }
+
+  /* disable the images */
+  .project-item {
+    display: grid;
+    grid-template-columns: 1fr 0;
+  }
+
+  .project-image img {
+    display: none;
+  }
+  
+  .legend {
+    font-size: 2.5vw;
+    justify-content: flex-start;
+  }
+}
+
+/* mobile devices */
+@media (hover: none) {
+  .kuntiniong a {
+    font-weight: 100;
+  }
+
+  /* overriding the injected css from home.js */
+  .descrip {
+    line-height: 1.4 !important;
+  }
+
+  .kun-svg {
+    height: 130px !important;
+    width: 150px !important;
+    padding: 30px 30px !important;
+    margin: 25px 0 !important;
+  
+    background-color: var(--svg-background);
+    border-radius: 13px !important;
+  }
+
+  .project h3 {
+    color: var(--text-color);
+    text-decoration: underline;
+  }
+
+  .project p {
+    color: var(--text-color);
+  }
+
+  .project span {
+    color: var(--secondary-color);
+    font-weight: 1000;
+  }
+
+  .project em {
+    color: var(--primary-color);
+    font-weight: 1000;
+  }
+
+  .course-list span {
+    font-size: 14px;
+  }
+
+  .course-item {
+    margin-bottom: 1rem;
+  }
+}

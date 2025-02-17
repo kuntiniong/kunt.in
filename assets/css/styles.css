@@ -27,22 +27,24 @@
   --svg-background: #091833;
 }
 
+/* hide the scrollbar */
+body::-webkit-scrollbar {
+  display: none;
+}
+
 /* layout styling */
+/* remove all the default margin and padding */
 * {
-  /* remove all the default margin and padding */
   margin: 0;
   padding: 0;
 }
 
+/* set root font size */
 html {
-  scroll-behavior: smooth; /* enables the anchors to have scrolling animation */
+  font-size: 13px;
 }
 
-/* Hide the scrollbar */
-body::-webkit-scrollbar {
-  display: none; /* For Chrome, Safari, and Edge */
-}
-
+/* font configs */
 body {
   font-family: "JetBrains Mono", monospace;
   color: var(--text-color);
@@ -102,7 +104,7 @@ em {
   color: var(--primary-color);
 }
 
-/* navigation bar */
+/* logo */
 .kuntiniong {
   padding: 5px;
 
@@ -122,17 +124,18 @@ em {
 .kuntiniong a {
   font-family: "Cedarville Cursive", Arial;
 
-  font-size: 25px;
+  font-size: 1.6rem;
   font-weight: 1000;
 
   color: var(--text-color);
   text-decoration: none;
 }
 
+/* nav bar */
 .nav-bar {
-  font-size: clamp(14px, 3.2vw, 16px);
+  font-size: 1rem;
   background-color: var(--background-color);
-  padding: 10px;
+  padding-top: 10px;
 
   top: 0;
   position: sticky; /* fixed on top */
@@ -144,12 +147,13 @@ em {
 .tab-list {
   display: flex;
   justify-content: flex-end; /* align to right */
+  align-items: center;
 
   list-style-type: none;
 }
 
 .tab {
-  padding: 10px;
+  margin-right: 1.5rem;
 }
 
 /* dark mode toggle */
@@ -157,7 +161,6 @@ em {
   background: none; /* remove default background & border */
   border: none;
 
-  margin-left: 1.5em;
   cursor: pointer; /* add pointer cursor on hover */
 }
 
@@ -168,179 +171,6 @@ em {
   'GRAD' 0,
   'opsz' 24;
   color: var(--primary-color);
-}
-
-/* home -> in home.js */
-
-/* about */
-
-/* projects */
-.project-name {
-  font-size: 21px;
-  font-weight: 1000;
-}
-
-.project-item {
-  display: grid;
-  grid-template-columns: 1fr 200px;
-  align-items: center;
-  margin: 2rem 0;
-  border-bottom: 1px solid var(--muted-color);
-}
-
-.project-border{
-  margin-top: 1.5rem;
-}
-
-.project-info {
-  grid-column: 1 / 2;
-}
-
-.project-descrip::before {
-  content: ">"; /* indentation */
-  text-indent: 0;
-}
-
-.project-descrip {
-  margin-top: 15px;
-
-  /* indenation */
-  text-indent: -1.2em;
-  margin-left: 2em;
-}
-
-.tech {
-  font-size: 15px;
-  margin: 1em 0;
-}
-
-.project-image {
-  grid-column: 2 / 3;
-  width: 200px;
-  height: 150px;
-}
-
-.project-image img {
-  width: 100%; /* proportion */
-  height: 100%;
-  object-fit: cover;
-  transition: filter 0.5s ease, transform 0.5s ease;
-}
-
-.project span,
-.project p,
-.project em {
-  /* hover animation */
-  color: var(--muted-color);
-  font-weight: normal;
-  transition: color 0.3s ease-out, font-weight 0.3s ease-out;
-}
-
-.project a:hover h3 {
-  color: var(--text-color);
-  text-decoration: underline;
-}
-
-.project a:hover span {
-  color: var(--secondary-color);
-  font-weight: 1000;
-}
-
-.project a:hover em {
-  color: var(--primary-color);
-  font-weight: 1000;
-}
-
-.project a:hover p {
-  color: var(--text-color);
-}
-
-/* courses */
-.year {
-  margin-top: 25px;
-  border-bottom: 1px solid var(--muted-color);
-}
-
-.year h3 {
-  margin-bottom: 10px;
-}
-
-.course-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* two equal-width columns */
-  list-style-type: none;
-  padding: 1.5em;
-}
-
-.course-item {
-  font-size: clamp(10px, 3.2vw, 16px);
-
-  font-weight: 1000;
-  margin-bottom: 1.5rem;
-}
-
-/* highlight */
-.math {
-  color: var(--secondary-color);
-}
-
-.tech {
-  color: var(--primary-color);
-}
-
-.business {
-  color: var(--tertiary-color);
-}
-
-.lang {
-  color: var(--text-color);
-  font-weight: 500 !important;
-}
-
-/* legend */
-.legend {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-
-  font-size: clamp(14px, 3.2vw, 16px);
-
-  gap: 1em;
-  margin-right: 10px;
-}
-
-.legend-item {
-  display: flex;
-  align-items: center;
-
-  gap: 5px;
-}
-
-.legend-color {
-  width: 15px;
-  height: 15px;
-  border-radius: 3px;
-}
-
-.math-color { background-color: var(--secondary-color); }
-.tech-color { background-color: var(--primary-color); }
-.business-color { background-color: var(--tertiary-color); }
-.lang-color { background-color: var(--text-color); }
-
-/* contact */
-.contact-descrip {
-  padding: 1.5em;
-  border-bottom: 1px solid var(--muted-color);
-}
-
-.contact {
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 1em;
-}
-
-.contact p {
-  display: inline;
 }
 
 /* portrait mode */

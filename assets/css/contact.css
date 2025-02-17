@@ -1,0 +1,14 @@
+.contact-descrip {
+  padding: 1.5em;
+  border-bottom: 1px solid var(--muted-color);
+}
+
+.contact {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 1em;
+}
+
+.contact p {
+  display: inline;
+}
