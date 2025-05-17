@@ -67,6 +67,7 @@ function handleMediaQueryChange(e) {
                 margin: 3.5vh 0 !important;
               }
               .home-container {
+                margin-top: 20%;
                 text-align: center;
               }
 
