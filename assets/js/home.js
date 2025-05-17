@@ -56,6 +56,8 @@ function handleMediaQueryChange(e) {
         <p>·</p>
         <a href="https://github.com/kuntiniong">GitHub</a>
         <p>·</p>
+        <a href="https://behance.net/kuntin">Behance</a>
+        <p>·</p>
         <a href="mailto:dev@kunt.in">dev@kunt.in</a>
       </div>
     `;
@@ -189,6 +191,8 @@ function handleMediaQueryChange(e) {
               <a href="https://x.com/kuntiniong">X</a>
               <p>·</p>
               <a href="https://github.com/kuntiniong">GitHub</a>
+              <p>·</p>
+              <a href="https://behance.net/kuntin">Behance</a>
               <p>·</p>
               <a href="mailto:dev@kunt.in">dev@kunt.in</a>
             </div>
