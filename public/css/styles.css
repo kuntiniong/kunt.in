@@ -75,7 +75,7 @@ h2 {
 .context {
   /* context indentation */
   padding: 10px;
-  opacity: 0; /* hide the context before the gsap animations */
+  /* opacity: 0; temporarily commented out to debug - hide the context before the gsap animations */
 }
 
 /* line spacing except for home */

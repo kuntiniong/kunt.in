@@ -1,0 +1,93 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Kun Tin | Courses" css="courses">
+  <!-- courses -->
+  <section id="courses">
+    <h2>Courses</h2>
+    <!-- courses = year(title) + course-list-->
+    <div class="courses context">
+      <div class="year">
+        <h3>- Year 2</h3>
+        <ul class="course-list">
+          <div class="math">
+            <li class="course-item">MA2508 &nbsp Multivariable Calculus</li>
+            <li class="course-item">SDSC3007 Advanced Stats</li>
+            <li class="course-item">SDSC2002 Convex Optimization</li>
+            <li class="course-item">GE1358 &nbsp Coordinate Geometry</li>
+          </div>
+
+          <div class="business">
+            <li class="course-item">CB3410 &nbsp Financial Management</li>
+          </div>
+
+          <div class="tech">
+            <li class="course-item">CS2334 &nbsp Data Structures</li>
+            <li class="course-item">CS3273 &nbsp Data & System Security</li>
+            <li class="course-item">SDSC3006 Machine Learning</li>
+            <li class="course-item">
+              LT3233 &nbsp Computational Linguistics
+            </li>
+            <li class="course-item">
+              SDSC2005 Intro to Computational SocSci
+            </li>
+          </div>
+
+          <div class="lang">
+            <li class="course-item">PED1706 &nbspSoccer</li>
+          </div>
+        </ul>
+      </div>
+
+      <div class="year">
+        <h3>- Year 1</h3>
+        <ul class="course-list">
+          <div class="math">
+            <li class="course-item">MA1503 &nbsp Linear Algebra</li>
+            <li class="course-item">MA2510 &nbsp Stats & Probability</li>
+            <li class="course-item">SDSC2102 Stat Methods & Data Analysis</li>
+          </div>
+
+          <div class="business">
+            <li class="course-item">GE2256 &nbsp Game Theory for Business</li>
+          </div>
+
+          <div class="tech">
+            <li class="course-item">
+              CS1315 &nbsp Intro to Programming (C++)
+            </li>
+            <li class="course-item">SDSC2001 Python for Data Science</li>
+            <li class="course-item">CS3402 &nbsp Database Systems</li>
+            <li class="course-item">SDSC2004 Data Visualization</li>
+          </div>
+
+          <div class="lang">
+            <li class="course-item">GE1401 &nbsp University English</li>
+            <li class="course-item">GE2401 &nbsp English for Science</li>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="legend">
+    <p>></p>
+    <div class="legend-item">
+      <div class="legend-color math-color"></div>
+      <p>Math</p>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color tech-color"></div>
+      <p>Tech</p>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color business-color"></div>
+      <p>Business</p>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color lang-color"></div>
+      <p>Miscellaneous</p>
+    </div>
+  </div>
+</Layout>
