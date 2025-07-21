@@ -164,7 +164,8 @@ em {
   cursor: pointer; /* add pointer cursor on hover */
 }
 
-.material-symbols-outlined {
+.material-symbols-outlined,
+.dark-mode-icon {
   font-variation-settings:
   'FILL' 0,
   'wght' 300,

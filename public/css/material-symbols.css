@@ -1,0 +1,52 @@
+/* Material Symbols Outlined - Local Font */
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 100 700;
+  font-display: swap;
+  src: url('/fonts/material-symbols-outlined.woff2') format('woff2');
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Alternative approach using CSS icons for dark_mode and light_mode */
+.dark-mode-icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.dark-mode-icon.dark_mode {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 -960 960 960' width='24' fill='none' stroke='%2300008b' stroke-width='1.5'%3E%3Cpath d='M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.dark-mode-icon.light_mode {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 -960 960 960' width='24' fill='none' stroke='%2300008b' stroke-width='1.5'%3E%3Ccircle cx='480' cy='-480' r='100' stroke-linecap='round'/%3E%3Cpath d='M480-760v-160m0 720v-160m320-320H640m-480 0H0m707-253l-57-57m-340 340l-57-57m0-226l57-57m340 340l57-57' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+/* Dark mode versions with different color */
+.dark-mode .dark-mode-icon.dark_mode {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 -960 960 960' width='24' fill='none' stroke='%23e3bb08' stroke-width='1.5'%3E%3Cpath d='M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.dark-mode .dark-mode-icon.light_mode {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 -960 960 960' width='24' fill='none' stroke='%23e3bb08' stroke-width='1.5'%3E%3Ccircle cx='480' cy='-480' r='100' stroke-linecap='round'/%3E%3Cpath d='M480-760v-160m0 720v-160m320-320H640m-480 0H0m707-253l-57-57m-340 340l-57-57m0-226l57-57m340 340l57-57' stroke-linecap='round'/%3E%3C/svg%3E");
+}

@@ -15,22 +15,49 @@ const { title, description = "Personal Website", css } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
     
     <!-- thumbnail -->
-    <meta property="og:image" content="https://raw.githubusercontent.com/kuntiniong/kuntiniong.github.io/main/images/thumbnail.png" />
+    <meta property="og:image" content="https://kunt.in/images/thumbnail.png" />
     <meta property="og:title" content={title} />
-    <meta property="og:url" content="https://kuntiniong.github.io/" />
+    <meta property="og:url" content="https://kunt.in/" />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="description" content={description} />
+    <meta name="author" content="Kun Tin Iong" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#000000" />
 
     <link rel="stylesheet" type="text/css" href="/css/styles.css" />
     <link rel="stylesheet" type="text/css" href="/css/svg.css" />
     {css && <link rel="stylesheet" type="text/css" href={`/css/${css}.css`} />}
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/images/favicon.png" as="image" type="image/png" />
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" as="script" />
+    <link rel="preload" href="/css/material-symbols.css" as="style" />
 
-    <!-- gsap library and google svg icons -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" is:inline></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=dark_mode,light_mode" />
+    <!-- gsap library and local material symbols -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <link rel="stylesheet" href="/css/material-symbols.css" />
 
     <link rel="icon" href="/images/favicon.png" />
     <title>{title}</title>
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Kun Tin Iong",
+      "url": "https://kunt.in",
+      "sameAs": [
+        "https://github.com/kuntiniong"
+      ],
+      "jobTitle": "Software Developer",
+      "description": "Personal website showcasing projects in web development, machine learning, and data science",
+      "knowsAbout": ["JavaScript", "Python", "React", "Machine Learning", "Web Development"],
+    }
+    </script>
   </head>
 
   <body>
@@ -47,7 +74,7 @@ const { title, description = "Personal Website", css } = Astro.props;
         <li class="tab"><a href="/contact">Contact</a></li>
         <!-- dark mode toggle -->
         <button class="dark-mode-button" id="darkModeToggle">
-          <span class="material-symbols-outlined"> dark_mode </span>
+          <span class="dark-mode-icon dark_mode"></span>
         </button>
       </ul>
     </nav>
@@ -56,7 +83,22 @@ const { title, description = "Personal Website", css } = Astro.props;
       <slot />
     </main>
 
-    <script src="/js/dark-mode.js" is:inline></script>
-    <script src="/js/animation.js" is:inline></script>
+    <script src="/js/dark-mode.js" defer></script>
+    <script src="/js/animation.js" defer></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js')
+            .then(function(registration) {
+              console.log('ServiceWorker registered: ', registration);
+            })
+            .catch(function(registrationError) {
+              console.log('ServiceWorker registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
   </body>
 </html>
