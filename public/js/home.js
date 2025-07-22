@@ -211,6 +211,7 @@ function handleMediaQueryChange(e) {
               .home-container {
                 display: flex;
                 justify-content: center;
+                margin-bottom: 30vh;
               }
 
               .grid-container {
