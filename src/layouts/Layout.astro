@@ -63,15 +63,15 @@ const { title, description = "Personal Website", css } = Astro.props;
   <body>
     <!-- navigation bar -->
     <div class="kuntiniong">
-      <a href="/">Kun Tin Iong</a>
+      <a href="/#home">Kun Tin Iong</a>
     </div>
 
     <nav class="nav-bar">
       <ul class="tab-list">
-        <li class="tab"><a href="/about">About</a></li>
-        <li class="tab"><a href="/projects">Projects</a></li>
-        <li class="tab"><a href="/courses">Courses</a></li>
-        <li class="tab"><a href="/contact">Contact</a></li>
+        <li class="tab"><a href="/#about">About</a></li>
+        <li class="tab"><a href="/#projects">Projects</a></li>
+        <li class="tab"><a href="/#courses">Courses</a></li>
+        <li class="tab"><a href="/#contact">Contact</a></li>
         <!-- dark mode toggle -->
         <button class="dark-mode-button" id="darkModeToggle">
           <span class="dark-mode-icon dark_mode"></span>
@@ -99,6 +99,20 @@ const { title, description = "Personal Website", css } = Astro.props;
             });
         });
       }
+    </script>
+    <script>
+      document.querySelectorAll('a[href^="/#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const id = this.getAttribute('href').substr(2);
+          const element = document.querySelector('#' + id);
+          if (element) {
+            element.scrollIntoView({
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
     </script>
   </body>
 </html>

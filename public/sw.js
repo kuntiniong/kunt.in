@@ -1,10 +1,6 @@
 const CACHE_NAME = 'kunt-in-v1';
 const urlsToCache = [
   '/',
-  '/about',
-  '/projects',
-  '/courses',
-  '/contact',
   '/css/styles.css',
   '/css/svg.css',
   '/css/material-symbols.css',
@@ -16,7 +12,14 @@ const urlsToCache = [
   '/images/favicon.png'
 ];
 
+// Set this to true to disable cache (e.g., in development)
+const isDevMode = false; // Change to true to disable cache during development
+
 self.addEventListener('install', function(event) {
+  if (isDevMode) {
+    // Skip caching in dev mode
+    return;
+  }
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(function(cache) {
@@ -26,6 +29,11 @@ self.addEventListener('install', function(event) {
 });
 
 self.addEventListener('fetch', function(event) {
+  if (isDevMode) {
+    // Always fetch from network in dev mode
+    event.respondWith(fetch(event.request));
+    return;
+  }
   event.respondWith(
     caches.match(event.request)
       .then(function(response) {
