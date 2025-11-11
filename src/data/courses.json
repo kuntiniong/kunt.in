@@ -1,43 +1,46 @@
 {
+  "year3": {
+    "math": ["MA3526 Analysis"],
+    "business": ["MA3521 Intro to Financial Math"],
+    "tech": [
+      "SDSC4116 Federated Learning (Capstone)",
+      "SDSC4008 Deep Learning",
+      "CS4296 Cloud Computing",
+      "CS3201 Computer Networks"
+    ],
+    "lang": ["GE1501 Chinese History & Philosophy"]
+  },
   "year2": {
     "math": [
-      "MA2508 &nbsp; Multivariable Calculus",
-      "SDSC3007 Advanced Stats",
+      "MA2508 Multivariable Calculus",
+      "SDSC3007 Advanced Statistics",
       "SDSC2002 Convex Optimization",
-      "GE1358 &nbsp; Coordinate Geometry"
+      "GE1358 Coordinate Geometry"
     ],
-    "business": [
-      "CB3410 &nbsp; Financial Management"
-    ],
+    "business": ["CB3410 Financial Management"],
     "tech": [
-      "CS2334 &nbsp; Data Structures",
-      "CS3273 &nbsp; Data & System Security",
-      "SDSC3006 Machine Learning",
-      "LT3233 &nbsp; Computational Linguistics",
-      "SDSC2005 Intro to Computational SocSci"
+      "CS2334 Data Structures",
+      "CS3273 Data & System Security",
+      "SDSC3006 Machine Learning"
     ],
     "lang": [
-      "PED1706 &nbsp;Soccer"
+      "LT3233 Computational Linguistics",
+      "SDSC2005 Intro to Computational SocSci"
     ]
   },
   "year1": {
     "math": [
-      "MA1503 &nbsp; Linear Algebra",
-      "MA2510 &nbsp; Stats & Probability",
-      "SDSC2102 Stat Methods & Data Analysis"
+      "MA1503 Linear Algebra",
+      "MA2510 Statistics & Probability",
+      "SDSC2102 Statistical Methods & Data Analysis"
     ],
-    "business": [
-      "GE2256 &nbsp; Game Theory for Business"
-    ],
+    "business": ["GE2256 Game Theory"],
     "tech": [
-      "CS1315 &nbsp; Intro to Programming (C++)",
+      "CS1315 Intro to Programming (C++)",
       "SDSC2001 Python for Data Science",
-      "CS3402 &nbsp; Database Systems",
+      "CS3402 Database Systems",
       "SDSC2004 Data Visualization"
     ],
-    "lang": [
-      "GE1401 &nbsp; University English",
-      "GE2401 &nbsp; English for Science"
-    ]
+    "lang": ["GE1401 University English", "GE2401 English for Science"]
   }
 }

@@ -17,7 +17,14 @@ import courses from '../data/courses.json';
           <ul class="course-list">
             {Object.entries(yearData).map(([category, coursesList]) => (
               <div class={category}>
-                {coursesList.map(course => <li class="course-item" set:html={course}></li>)}
+                {coursesList.map(course => {
+                  const parts = course.split(' ');
+                  const code = parts[0];
+                  const name = parts.slice(1).join(' ');
+                  const paddedCode = code + '&nbsp;'.repeat(Math.max(0, 9 - code.length));
+                  const paddedCourse = paddedCode + ' ' + name;
+                  return <li class="course-item" set:html={paddedCourse}></li>;
+                })}
               </div>
             ))}
           </ul>
