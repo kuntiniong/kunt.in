@@ -43,6 +43,8 @@ const { title, description = "Personal Website", css } = Astro.props;
     <link rel="icon" href="/images/favicon.png" />
     <title>{title}</title>
     
+    <slot name="head" />
+    
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
@@ -83,8 +85,7 @@ const { title, description = "Personal Website", css } = Astro.props;
       <slot />
     </main>
 
-    <script src="/js/dark-mode.js" defer></script>
-    <script src="/js/animation.js" defer></script>
+    <slot name="body" />
     
     <script>
       document.querySelectorAll('a[href^="/#"]').forEach(anchor => {
