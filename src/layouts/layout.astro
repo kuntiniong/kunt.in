@@ -60,12 +60,163 @@ const { title, description = "Personal Website", css } = Astro.props;
       "knowsAbout": ["JavaScript", "Python", "React", "Machine Learning", "Web Development"],
     }
     </script>
+
+    <style>
+      /* Mobile Hamburger Menu Styles */
+      .hamburger-menu {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        padding: 10px;
+        z-index: 1001;
+      }
+
+      .hamburger-menu span {
+        width: 25px;
+        height: 3px;
+        background-color: var(--text-color, #333);
+        margin: 3px 0;
+        transition: 0.3s;
+      }
+
+      .hamburger-menu.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+      }
+
+      .hamburger-menu.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger-menu.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+      }
+
+      .sidebar {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 300px;
+        height: 100vh;
+        background-color: var(--bg-color, #fff);
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        transition: left 0.3s ease;
+        z-index: 1000;
+        padding: 80px 20px 20px;
+        overflow: hidden;
+      }
+
+      .sidebar.active {
+        left: 0;
+      }
+
+      .sidebar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .sidebar li {
+        margin: 20px 0;
+      }
+
+      .sidebar a {
+        color: var(--text-color, #333);
+        text-decoration: none;
+        font-size: 1.2rem;
+        display: block;
+        padding: 10px 0;
+        border-bottom: 1px solid var(--border-color, #eee);
+      }
+
+      .sidebar .dark-mode-button {
+        margin-top: 30px;
+        background: none;
+        border: 1px solid var(--border-color, #ddd);
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+      }
+
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+      }
+
+      .overlay.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      @media (max-width: 768px) {
+        .hamburger-menu {
+          display: flex;
+          position: absolute;
+          right: 20px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+
+        .nav-bar {
+          display: none;
+        }
+
+        .kuntiniong {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          position: relative;
+          padding: 0 20px;
+        }
+
+        .kuntiniong a {
+          flex: 1;
+          text-align: left;
+        }
+      }
+
+      @media (min-width: 769px) {
+        .sidebar {
+          display: none;
+        }
+      }
+    </style>
   </head>
 
   <body>
+    <!-- Overlay for mobile menu -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Mobile Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <ul>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#projects">Projects</a></li>
+        <li><a href="/#courses">Courses</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+      <button class="dark-mode-button" id="sidebarDarkModeToggle">
+        <span class="dark-mode-icon dark_mode"></span>
+      </button>
+    </div>
+
     <!-- navigation bar -->
     <div class="kuntiniong">
       <a href="/#home">Kun Tin Iong</a>
+      <!-- Hamburger Menu -->
+      <div class="hamburger-menu" id="hamburgerMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
 
     <nav class="nav-bar">
@@ -88,6 +239,7 @@ const { title, description = "Personal Website", css } = Astro.props;
     <slot name="body" />
     
     <script>
+      // Smooth scrolling for hash links
       document.querySelectorAll('a[href^="/#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
           e.preventDefault();
@@ -97,9 +249,56 @@ const { title, description = "Personal Website", css } = Astro.props;
             element.scrollIntoView({
               behavior: 'smooth'
             });
+            // Close sidebar if open
+            closeSidebar();
           }
         });
       });
+
+      // Mobile menu functionality
+      const hamburgerMenu = document.getElementById('hamburgerMenu');
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('overlay');
+      
+      function openSidebar() {
+        if (hamburgerMenu) hamburgerMenu.classList.add('active');
+        if (sidebar) sidebar.classList.add('active');
+        if (overlay) overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+      
+      function closeSidebar() {
+        if (hamburgerMenu) hamburgerMenu.classList.remove('active');
+        if (sidebar) sidebar.classList.remove('active');
+        if (overlay) overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+      
+      if (hamburgerMenu) {
+        hamburgerMenu.addEventListener('click', () => {
+          if (sidebar && sidebar.classList.contains('active')) {
+            closeSidebar();
+          } else {
+            openSidebar();
+          }
+        });
+      }
+      
+      if (overlay) {
+        overlay.addEventListener('click', closeSidebar);
+      }
+      
+      // Sync dark mode buttons
+      const darkModeToggle = document.getElementById('darkModeToggle');
+      const sidebarDarkModeToggle = document.getElementById('sidebarDarkModeToggle');
+      
+      if (darkModeToggle && sidebarDarkModeToggle) {
+        sidebarDarkModeToggle.addEventListener('click', () => {
+          // Trigger the same dark mode logic as the main button
+          darkModeToggle.click();
+          closeSidebar();
+        });
+      }
     </script>
   </body>
 </html>
