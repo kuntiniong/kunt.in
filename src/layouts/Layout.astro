@@ -86,20 +86,6 @@ const { title, description = "Personal Website", css } = Astro.props;
     <script src="/js/dark-mode.js" defer></script>
     <script src="/js/animation.js" defer></script>
     
-    <!-- Service Worker Registration -->
-    <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function() {
-          navigator.serviceWorker.register('/sw.js')
-            .then(function(registration) {
-              console.log('ServiceWorker registered: ', registration);
-            })
-            .catch(function(registrationError) {
-              console.log('ServiceWorker registration failed: ', registrationError);
-            });
-        });
-      }
-    </script>
     <script>
       document.querySelectorAll('a[href^="/#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {

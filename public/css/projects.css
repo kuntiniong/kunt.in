@@ -5,7 +5,7 @@
 
 .project-item {
   display: grid;
-  grid-template-columns: 1fr 200px;
+  grid-template-columns: 1fr;
   align-items: center;
   margin: 2rem 0;
   border-bottom: 1px solid var(--muted-color);
@@ -35,19 +35,6 @@
 .tech {
   font-size: 0.95rem;
   margin: 1em 0;
-}
-
-.project-image {
-  grid-column: 2 / 3;
-  width: 200px;
-  height: 150px;
-}
-
-.project-image img {
-  width: 100%; /* proportion */
-  height: 100%;
-  object-fit: cover;
-  transition: filter 0.5s ease, transform 0.5s ease;
 }
 
 .project span,
@@ -129,16 +116,6 @@
 
   .course-list {
     grid-template-columns: 1fr; /* one column */
-  }
-
-  /* disable the images */
-  .project-item {
-    display: grid;
-    grid-template-columns: 1fr 0;
-  }
-
-  .project-image img {
-    display: none;
   }
   
   .legend {
