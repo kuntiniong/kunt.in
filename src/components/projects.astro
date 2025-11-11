@@ -1,4 +1,5 @@
 ---
+import projects from '../data/projects.json';
 ---
 
 <link rel="stylesheet" href="/css/projects.css" />
@@ -10,95 +11,20 @@
   <!-- item = info + project-image -->
   <!-- info = project-name + project-descrip + tech -->
   <div class="project context">
-    <div class="project-item">
-      <div class="project-info">
-        <a href="https://github.com/kuntiniong/concert-ticket-app">
-          <h3 class="project-name">Concert Ticketing App</h3>
-          <p class="project-descrip">
-            A <em>full stack concert ticketing</em> web app with
-            <em>dual CMS </em> for technical and
-            non-technical users <em>(Strapi Admin Panel + Google Sheets)</em>
-          </p>
-
-          <p class="tech">
-            > Tech: <span>React, Strapi, Tailwind CSS, shadcn, Google Apps Script</span>
-          </p>
-        </a>
+    {projects.map(project => (
+      <div class="project-item">
+        <div class="project-info">
+          <a href={project.link}>
+            <h3 class="project-name">{project.name}</h3>
+            {Array.isArray(project.description) ? 
+              project.description.map(desc => <p class="project-descrip" set:html={desc}></p>) : 
+              <p class="project-descrip" set:html={project.description}></p>
+            }
+            <p class="tech">> Tech: <span>{project.tech}</span></p>
+          </a>
+        </div>
+        <div class="project-border"></div>
       </div>
-      <div class="project-border"></div>
-    </div>
-
-    <div class="project-item">
-      <div class="project-info">
-        <a href="https://github.com/kuntiniong/kunt.in">
-          <h3 class="project-name">kunt.in</h3>
-          <p class="project-descrip">
-            I built this <em>personal website</em> with vanilla Javascript on my own
-          </p>
-
-          <p class="tech">> Tech: <span>HTML, CSS, JavaScript</span></p>
-        </a>
-      </div>
-      <div class="project-border"></div>
-    </div>
-
-    <div class="project-item">
-      <div class="project-info">
-        <a href="https://github.com/kuntiniong/hk-insta-identifier">
-          <h3 class="project-name">
-            Hong Kong Instagram Username Identifier
-          </h3>
-          <p class="project-descrip">
-            A <em>NLP</em> pipeline that identifies
-            <em>Hong Kong IG users</em> based on
-            <em>Romanized Cantonese linguistic features</em> in
-            <em>usernames</em>, without metadata
-          </p>
-
-          <p class="tech">
-            > Tech: <span>Scikit-Learn, NLTK, Selenium</span>
-          </p>
-        </a>
-      </div>
-      <div class="project-border"></div>
-    </div>
-
-    <div class="project-item">
-      <div class="project-info">
-        <a href="https://github.com/kuntiniong/aerolunar">
-          <h3 class="project-name">AeroLunar</h3>
-          <p class="project-descrip">
-            A <em>time series forecasting</em> project that predicts
-            <em>Air Quality Health Index (空氣質素健康指數)</em> using
-            <em>lunar cycles</em>
-          </p>
-
-          <p class="project-descrip">
-            Inspired by the
-            <em>Chinese health beliefs</em> related to
-            <em>lunar calendar</em>
-          </p>
-
-          <p class="tech">> Tech: <span>PyTorch, statsmodels</span></p>
-        </a>
-      </div>
-      <div class="project-border"></div>
-    </div>
-
-    <div class="project-item">
-      <div class="project-info">
-        <a href="https://github.com/kuntiniong/ml-scratch">
-          <h3 class="project-name">Machine Learning Models from Scratch</h3>
-          <p class="project-descrip">
-            A <em>Python implementation</em> of
-            <em>8 ML models</em> introduced in
-            <em>CS229</em>
-          </p>
-
-          <p class="tech">> Tech: <span>NumPy</span></p>
-        </a>
-      </div>
-      <div class="project-border"></div>
-    </div>
+    ))}
   </div>
 </section>

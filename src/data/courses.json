@@ -1,0 +1,43 @@
+{
+  "year2": {
+    "math": [
+      "MA2508 &nbsp; Multivariable Calculus",
+      "SDSC3007 Advanced Stats",
+      "SDSC2002 Convex Optimization",
+      "GE1358 &nbsp; Coordinate Geometry"
+    ],
+    "business": [
+      "CB3410 &nbsp; Financial Management"
+    ],
+    "tech": [
+      "CS2334 &nbsp; Data Structures",
+      "CS3273 &nbsp; Data & System Security",
+      "SDSC3006 Machine Learning",
+      "LT3233 &nbsp; Computational Linguistics",
+      "SDSC2005 Intro to Computational SocSci"
+    ],
+    "lang": [
+      "PED1706 &nbsp;Soccer"
+    ]
+  },
+  "year1": {
+    "math": [
+      "MA1503 &nbsp; Linear Algebra",
+      "MA2510 &nbsp; Stats & Probability",
+      "SDSC2102 Stat Methods & Data Analysis"
+    ],
+    "business": [
+      "GE2256 &nbsp; Game Theory for Business"
+    ],
+    "tech": [
+      "CS1315 &nbsp; Intro to Programming (C++)",
+      "SDSC2001 Python for Data Science",
+      "CS3402 &nbsp; Database Systems",
+      "SDSC2004 Data Visualization"
+    ],
+    "lang": [
+      "GE1401 &nbsp; University English",
+      "GE2401 &nbsp; English for Science"
+    ]
+  }
+}
