@@ -97,7 +97,7 @@ const { title, description = "Personal Website", css } = Astro.props;
         left: -100%;
         width: 300px;
         height: 100vh;
-        background-color: var(--bg-color, #fff);
+        background-color: var(--background-color);
         box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
         transition: left 0.3s ease;
         z-index: 1000;
@@ -120,22 +120,23 @@ const { title, description = "Personal Website", css } = Astro.props;
       }
 
       .sidebar a {
-        color: var(--text-color, #333);
+        color: var(--text-color);
         text-decoration: none;
         font-size: 1.2rem;
         display: block;
         padding: 10px 0;
-        border-bottom: 1px solid var(--border-color, #eee);
+        border-bottom: 1px solid var(--muted-color);
       }
 
       .sidebar .dark-mode-button {
         margin-top: 30px;
         background: none;
-        border: 1px solid var(--border-color, #ddd);
+        border: 1px solid var(--muted-color);
         padding: 10px;
         border-radius: 5px;
         cursor: pointer;
         width: 100%;
+        color: var(--text-color);
       }
 
       .overlay {
