@@ -1,44 +1,5 @@
-My personal website built with Astro.
+personal website originally built from vanilla html, css and js but now migrated to astro.
 
-## Development
+regular updates are made only to the contents and kept this site solely for SEO purposes.
 
-```bash
-npm run dev
-```
-
-## Build
-
-```bash
-npm run build
-```
-
-## File Structure
-
-```
-kunt.in/
-      ├── src/
-      │   ├── layouts/
-      │   │   └── Layout.astro      // main layout
-      │   └── pages/
-      │       ├── index.astro       // home page
-      │       ├── about.astro       // about page
-      │       ├── projects.astro    // projects page
-      │       ├── courses.astro     // courses page
-      │       └── contact.astro     // contact page
-      ├── public/
-      │   ├── assets/
-      │   │   ├── css/
-      │   │   │   └── styles.css    // global css
-      │   │   ├── images/
-      │   │   └── js/
-      │   │       ├── animation.js  // gsap animations
-      │   │       └── dark-mode.js  // dark mode toggle
-      │   └── CNAME                 // custom domain
-      ├── astro.config.mjs          // astro config
-      ├── package.json
-      └── README.md
-```
-
-## Deployment
-
-This site is deployed on Vercel with automatic deployments from the main branch. 
+visit [ktiong.com](ktiong.com) (close-source) for my latest updates.
