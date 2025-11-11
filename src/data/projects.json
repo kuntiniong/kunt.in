@@ -15,18 +15,18 @@
     "name": "Aerolunar",
     "description": "A <em>time series forecasting project</em> that predicts <em>air quality health index</em> using <em>lunar cycles</em> inspired by the <em>Chinese health beliefs</em> tied to <em>lunar calendar</em>",
     "tech": "PyTorch, statsmodels, pandas, numpy, matplotlib",
-    "link": "repo link"
+    "link": "https://github.com/kuntiniong/aerolunar"
   },
   {
     "name": "Machine Learning Models from Scratch",
     "description": "A <em>Python implementation</em> of <em>8 ML models</em> introduced in <em>CS229</em>",
     "tech": "NumPy",
-    "link": "repo link"
+    "link": "https://github.com/kuntiniong/ml-scratch"
   },
   {
-    "name": "HongKong Instagram Username Identifier",
+    "name": "Hong Kong Instagram Username Identifier",
     "description": "A <em>NLP pipeline</em> that identifies <em>HongKong IG users</em> based on <em>Romanized Cantonese linguistic features</em> in <em>usernames</em>, without metadata",
     "tech": "Scikit-learn, NLTK, Selenium, pandas, numpy",
-    "link": "streamlit app"
+    "link": "https://hk-insta-identifier.streamlit.app/"
   }
 ]
