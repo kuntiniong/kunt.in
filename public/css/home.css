@@ -13,7 +13,7 @@
   display: grid;
   grid-template-columns: 1fr 1.9fr;
   align-items: center;
-  gap: 1.5rem;
+  gap: 5rem;
   margin-top: 10%;
 }
 
@@ -55,28 +55,6 @@
   100% {
     background-position: 0% 50%;
   }
-}
-
-/* Google Text */
-.google {
-  font-weight: 1000;
-  color: var(--text-color);
-}
-
-.blue {
-  color: #4285f4;
-}
-
-.green {
-  color: #24a853;
-}
-
-.yellow {
-  color: #fbbc05;
-}
-
-.red {
-  color: #ea4335;
 }
 
 /* Home Contact */
